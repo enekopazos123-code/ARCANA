@@ -1,18 +1,16 @@
 package dev.arcana;
 
-import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 
-public final class ModItems {
+@Mod(Arcana.MOD_ID)
+public final class Arcana {
 
-    public static final DeferredRegister.Items ITEMS =
-        DeferredRegister.createItems(Arcana.MOD_ID);
+    public static final String MOD_ID = "arcana";
 
-    public static final DeferredItem<Item> ARCANE_CORE =
-        ITEMS.register("arcane_core",
-            () -> new Item(new Item.Properties()));
-
-    private ModItems() {
+    public Arcana() {
+        ModItems.ITEMS.register(
+            FMLJavaModLoadingContext.get().getModEventBus()
+        );
     }
 }
