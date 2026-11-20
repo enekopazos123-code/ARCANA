@@ -5,13 +5,12 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class ModItems {
-
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(Arcana.MOD_ID);
 
     public static final DeferredItem<Item> ARCANE_CORE =
             ITEMS.register("arcane_core",
-                    () -> new Item(new Item.Properties()));
+                    () -> new ArcaneCoreItem(new Item.Properties().stacksTo(1)));
 
     private ModItems() {
     }
