@@ -1,18 +1,18 @@
 package dev.arcana;
 
-import net.neoforged.fml.common.Mod;
+import net.minecraft.world.item.Item;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
-/**
- * ARCANA entry point.
- *
- * This initial build is deliberately a clean, compilable foundation.
- * Gameplay systems and client rendering are added in subsequent milestones.
- */
-@Mod(Arcana.MOD_ID)
-public final class Arcana {
-    public static final String MOD_ID = "arcana";
+public final class ModItems {
 
-    public Arcana() {
-        // Registration will be added in the next implementation milestone.
+    public static final DeferredRegister.Items ITEMS =
+        DeferredRegister.createItems(Arcana.MOD_ID);
+
+    public static final DeferredItem<Item> ARCANE_CORE =
+        ITEMS.register("arcane_core",
+            () -> new Item(new Item.Properties()));
+
+    private ModItems() {
     }
 }
